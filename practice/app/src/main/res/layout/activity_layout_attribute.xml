@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ViewAttributeActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/center_btn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="right"
+        android:text="안녕하세요.는 right, layout_gravity는 center"/>
+
+    <Button
+        android:id="@+id/center_horizontal_btn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="right"
+        android:text="안녕하세요.는 right, layout_gravity는 center_horizontal"/>
+
+    <Button
+        android:id="@+id/center_vertical_btn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="right"
+        android:text="안녕하세요.는 right, layout_gravity는 center_vertical"/>
+
+    <Button
+        android:id="@+id/bottom_btn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="right"
+        android:text="안녕하세요.는 right, layout_gravity는 bottom"/>
+
+</LinearLayout>
