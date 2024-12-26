@@ -1,4 +1,4 @@
-package com.ssafy.android_ui
+package com.android.practice.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.BaseAdapter
 import android.widget.TextView
+import com.android.practice.R
 import org.w3c.dom.Text
 
 class CustomListAdapter(val context:Context, var items: List<Map<String, String>>, val layout: Int)

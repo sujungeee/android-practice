@@ -7,4 +7,31 @@
     android:layout_height="match_parent"
     tools:context=".StartActivity">
 
+    <Button
+        android:id="@+id/event_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="이벤트 핸들러 버튼"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ui_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="안드로이드 UI(레이아웃, 리스트뷰)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/event_btn" />
+
+    <Button
+        android:id="@+id/service_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="서비스 컴포넌트"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ui_btn" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,20 +1,46 @@
 package com.android.practice
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.android.practice.databinding.ActivityStartBinding
+import com.android.practice.ui.ListViewActivity
 
+private const val TAG = "StartActivity_practice"
 class StartActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityStartBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_start)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        binding= ActivityStartBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        // 1. anonymous nested class로 event handler 구현
+//        binding.eventBtn.setOnClickListener( object: View.OnClickListener {
+//            override fun onClick(v: View) {
+//                Toast.makeText(this@StartActivity, "Hello World", Toast.LENGTH_SHORT).show()
+//            }
+//        })
+
+        // 2. 람다식 적용하기
+//        binding.eventBtn.setOnClickListener({ v: View? ->
+//            Toast.makeText(this, "Hello World", Toast.LENGTH_SHORT).show()
+//        })
+
+        // 3. 최종 코드
+        binding.eventBtn.setOnClickListener {
+            Toast.makeText(this, "Hello World" + it.javaClass.name, Toast.LENGTH_SHORT).show()
+        }
+
+        // 안드로이드 UI
+        binding.uiBtn.setOnClickListener {
+            val intent= Intent(this, UiActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.serviceBtn.setOnClickListener {
+
         }
     }
 }

@@ -5,8 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ViewAttributeActivity"
+    tools:context=".ui.LayoutAttributeActivity"
     android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="layout_gravity, gravity 속성" />
 
     <Button
         android:id="@+id/center_btn"
@@ -14,7 +19,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="right"
-        android:text="안녕하세요.는 right, layout_gravity는 center"/>
+        android:text="안녕하세요.는 right, layout_gravity는 center"
+        android:layout_marginTop="10dp"/>
 
     <Button
         android:id="@+id/center_horizontal_btn"
@@ -39,5 +45,43 @@
         android:layout_gravity="bottom"
         android:gravity="right"
         android:text="안녕하세요.는 right, layout_gravity는 bottom"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="layout_weight 속성"
+        android:layout_marginTop="30dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="#ff0000"
+            android:text="text1"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="#00ff00"
+            android:text="text2"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="#0000ff"
+            android:text="text3"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -3,6 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- push전송 permission -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- foreground 서비스 권한 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,8 +18,40 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Practice"
         tools:targetApi="31">
+        <service
+            android:name=".service.MyForeService"
+            android:foregroundServiceType="mediaPlayback" />
+        <service
+            android:name=".service.MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".service.StartServiceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ServiceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.LayoutAttributeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ListViewActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SubActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StartActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
