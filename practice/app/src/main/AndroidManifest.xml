@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
     <!-- push전송 permission -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- foreground 서비스 권한 -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" /> <!-- 사용자 정의 permission 선언 -->
+    <permission
+        android:name="com.android.practice.news.funny.PRIVATE"
+        android:protectionLevel="signature" /> <!-- permission 사용 선언 -->
+    <uses-permission android:name="com.android.practice.news.funny.PRIVATE" />
 
     <application
         android:allowBackup="true"
@@ -18,6 +21,32 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Practice"
         tools:targetApi="31">
+        <receiver
+            android:name=".broadcastReceiver.UserPermissionReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+
+        <activity
+            android:name=".broadcastReceiver.BroadcastReceiverActivity"
+            android:exported="false" />
+
+        <receiver
+            android:name=".broadcastReceiver.LocaleChangeReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCALE_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".broadcastReceiver.NewsReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="example.MY" />
+            </intent-filter>
+        </receiver>
+
         <service
             android:name=".service.MyForeService"
             android:foregroundServiceType="mediaPlayback" />

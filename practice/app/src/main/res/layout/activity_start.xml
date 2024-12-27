@@ -34,4 +34,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ui_btn" />
 
+    <Button
+        android:id="@+id/broadcast_receiver_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="브로드캐스트 리시버"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/service_btn" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

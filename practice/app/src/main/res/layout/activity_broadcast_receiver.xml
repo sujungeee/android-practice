@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".broadcastReceiver.BroadcastReceiverActivity"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/dynamic_bc_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="동적 브로드캐스트리시버"/>
+
+    <Button
+        android:id="@+id/user_bc_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="사용자 정의 브로드캐스트리시버"/>
+
+    <Button
+        android:id="@+id/user_permission_bc_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="사용자 정의 permission 브로드캐스트리시버"/>
+
+</LinearLayout>

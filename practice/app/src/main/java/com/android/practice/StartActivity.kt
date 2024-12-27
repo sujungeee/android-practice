@@ -4,7 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.android.practice.broadcastReceiver.LocaleChangeReceiver
 import com.android.practice.databinding.ActivityStartBinding
+import com.android.practice.service.StartServiceActivity
 import com.android.practice.ui.ListViewActivity
 
 private const val TAG = "StartActivity_practice"
@@ -39,8 +41,16 @@ class StartActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        // 서비스 컴포넌트
         binding.serviceBtn.setOnClickListener {
+            val intent= Intent(this, StartServiceActivity::class.java)
+            startActivity(intent)
+        }
 
+        // 브로드캐스트리시버 컴포넌트
+        binding.broadcastReceiverBtn.setOnClickListener {
+            val intent= Intent(this, LocaleChangeReceiver::class.java)
+            startActivity(intent)
         }
     }
 }
