@@ -9,15 +9,20 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/startService_btn"
+        android:id="@+id/bindService_local_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="startService"/>
+        android:text="bindService- local"/>
 
     <Button
-        android:id="@+id/bindService_btn"
+        android:id="@+id/bindService_remote_activity_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="bindService"/>
+        android:text="bindService- remote- activity"/>
 
+    <Button
+        android:id="@+id/bindService_remote_aidl_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="bindService- remote- aidl"/>
 </LinearLayout>

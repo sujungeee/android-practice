@@ -6,6 +6,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.android.practice.bindService.LocalBindActivity
+import com.android.practice.bindService.RemoteActivity
 import com.android.practice.databinding.ActivityServiceBinding
 import com.android.practice.service.StartServiceActivity
 
@@ -17,9 +19,18 @@ class ServiceActivity : AppCompatActivity() {
         binding= ActivityServiceBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.startServiceBtn.setOnClickListener{
-            val intent= Intent(this, StartServiceActivity::class.java)
+        binding.bindServiceLocalBtn.setOnClickListener {
+            val intent= Intent(this, LocalBindActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.bindServiceRemoteActivityBtn.setOnClickListener {
+            val intent= Intent(this, RemoteActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.bindServiceRemoteAidlBtn.setOnClickListener {
+
         }
     }
 }

@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "practice"
 include(":app")
- 
+include(":app:remote_binder")

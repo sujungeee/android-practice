@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <!-- push전송 permission -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- foreground 서비스 권한 -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
@@ -10,6 +9,10 @@
         android:name="com.android.practice.news.funny.PRIVATE"
         android:protectionLevel="signature" /> <!-- permission 사용 선언 -->
     <uses-permission android:name="com.android.practice.news.funny.PRIVATE" />
+
+    <queries>
+        <package android:name="com.android.remote_binder" />
+    </queries>
 
     <application
         android:allowBackup="true"
@@ -21,10 +24,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Practice"
         tools:targetApi="31">
+        <activity
+            android:name=".bindService.RemoteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bindService.LocalBindActivity"
+            android:exported="false" />
+
         <receiver
             android:name=".broadcastReceiver.UserPermissionReceiver"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true" />
 
         <activity
             android:name=".broadcastReceiver.BroadcastReceiverActivity"
@@ -50,6 +60,10 @@
         <service
             android:name=".service.MyForeService"
             android:foregroundServiceType="mediaPlayback" />
+        <service
+            android:name=".bindService.BoundService"
+            android:enabled="true"
+            android:exported="true" />
         <service
             android:name=".service.MyService"
             android:enabled="true"

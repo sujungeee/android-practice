@@ -1,13 +1,13 @@
 package com.android.practice
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.android.practice.broadcastReceiver.LocaleChangeReceiver
 import com.android.practice.databinding.ActivityStartBinding
 import com.android.practice.service.StartServiceActivity
-import com.android.practice.ui.ListViewActivity
 
 private const val TAG = "StartActivity_practice"
 class StartActivity : AppCompatActivity() {
@@ -50,6 +50,14 @@ class StartActivity : AppCompatActivity() {
         // 브로드캐스트리시버 컴포넌트
         binding.broadcastReceiverBtn.setOnClickListener {
             val intent= Intent(this, LocaleChangeReceiver::class.java)
+            startActivity(intent)
+        }
+
+        // 암시적 인텐트
+        binding.intentBtn.setOnClickListener {
+            Toast.makeText(this, "암시적 인텐트", Toast.LENGTH_SHORT).show()
+
+            val intent= Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com/"))
             startActivity(intent)
         }
     }

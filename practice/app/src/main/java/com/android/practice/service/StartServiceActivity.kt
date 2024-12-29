@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.android.practice.R
+import com.android.practice.ServiceActivity
 import com.android.practice.databinding.ActivityStartServiceBinding
 
 private const val TAG = "StartServiceActivity_practice"
@@ -55,6 +56,11 @@ class StartServiceActivity : AppCompatActivity() {
         binding.foreStopServiceBtn.setOnClickListener {
             stopService(foreIntent);
             Log.d(TAG, "onCreate: StopService()")
+        }
+
+        binding.bindServiceBtn.setOnClickListener {
+            val intent= Intent(this, ServiceActivity::class.java)
+            startActivity(intent)
         }
     }
 }

@@ -33,4 +33,10 @@
         android:layout_height="wrap_content"
         android:text="foreground - stopService() 호출" />
 
+    <Button
+        android:id="@+id/bindService_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="bindService 호출" />
+
 </LinearLayout>
